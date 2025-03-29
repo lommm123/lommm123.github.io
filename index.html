@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>给你的特别信件</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            background: #fef6f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /* 按钮样式 */
+        #openBtn {
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 100;
+            transition: all 0.3s;
+        }
+        #openBtn:hover {
+            transform: translateY(-3px);
+        }
+        /* 内容区域（初始隐藏） */
+        #content {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+        }
+        /* 音乐播放器 */
+        #musicPlayer {
+            padding: 10px;
+            background: rgba(255,255,255,0.8);
+            text-align: center;
+        }
+        /* 信件容器 */
+        #letterContainer {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            background: url('https://img.freepik.com/free-photo/vintage-crumpled-paper-texture_1194-6501.jpg') center/cover;
+        }
+        /* 漂浮元素 */
+        .float {
+            position: absolute;
+            opacity: 0.8;
+            animation: floating linear infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+        @keyframes floating {
+            to { transform: translateY(-100vh) rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- 入口按钮 -->
+    <button id="openBtn">💌 点击打开信件 💌</button>
+    
+    <!-- 隐藏的内容区 -->
+    <div id="content">
+        <div id="musicPlayer">
+            <audio id="bgMusic" controls>
+                <source src="music.mp3" type="audio/mp3">
+            </audio>
+        </div>
+        <div id="letterContainer">
+            <!-- 通过iframe嵌入原有letter.html -->
+            <iframe src="letter.html" width="100%" height="100%" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <script>
+        // 创建漂浮物
+        function createFloats() {
+            const symbols = ['🌸', '🍃', '❄️', '✨', '💖', '🌹'];
+            for (let i = 0; i < 15; i++) {
+                const float = document.createElement('div');
+                float.className = 'float';
+                float.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+                float.style.left = Math.random() * 100 + 'vw';
+                float.style.fontSize = (Math.random() * 20 + 10) + 'px';
+                float.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                float.style.animationDelay = Math.random() * 5 + 's';
+                document.body.appendChild(float);
+            }
+        }
+
+        // 按钮点击事件
+        document.getElementById('openBtn').addEventListener('click', function() {
+            // 隐藏按钮
+            this.style.display = 'none';
+            
+            // 显示内容
+            document.getElementById('content').style.display = 'flex';
+            
+            // 添加漂浮物
+            createFloats();
+            
+            // 播放音乐
+            document.getElementById('bgMusic').play().catch(e => {
+                document.getElementById('bgMusic').controls = true;
+            });
+        });
+    </script>
+</body>
+</html>
