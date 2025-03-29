@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>给你的音乐信件</title>
+    <style>
+        body {
+            <!-- 漂浮爱心特效 -->
+<div id="floating-effects" style="position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:999;"></div>
+
+<script>
+  // 漂浮元素配置
+  const effects = {
+    types: ["❤", "✿", "✦", "♫"], // 漂浮的符号（可改成花瓣🌸、星星★等）
+    colors: ["#ff6b6b", "#ffa502", "#e84393", "#0984e3"], // 颜色
+    count: 20, // 数量
+    speed: 2   // 速度（1-5）
+  };
+
+  // 生成漂浮元素
+  for (let i = 0; i < effects.count; i++) {
+    const element = document.createElement("div");
+    element.innerHTML = effects.types[Math.floor(Math.random() * effects.types.length)];
+    element.style.position = "absolute";
+    element.style.color = effects.colors[Math.floor(Math.random() * effects.colors.length)];
+    element.style.fontSize = (15 + Math.random() * 20) + "px";
+    element.style.opacity = Math.random() * 0.7 + 0.3;
+    
+    // 初始位置
+    element.style.left = Math.random() * 100 + "vw";
+    element.style.top = Math.random() * 100 + "vh";
+    
+    // 动画
+    setInterval(() => {
+      element.style.top = (parseFloat(element.style.top) + effects.speed + "px";
+      if (parseFloat(element.style.top) > window.innerHeight) {
+        element.style.top = "-30px";
+        element.style.left = Math.random() * 100 + "vw";
+      }
+    }, 50);
+
+    document.getElementById("floating-effects").appendChild(element);
+  }
+</script>
+	    font-family: 'Georgia', serif;
+            background-color: #f9f3e9;
+            color: #333;
+            line-height: 1.6;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            background-image: url('https://example.com/parchment-texture.jpg');
+            background-size: cover;
+        }
+        .letter {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 40px;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .date {
+            text-align: right;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+        .signature {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 24px;
+            margin-top: 50px;
+        }
+        .music-control {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 10px;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="letter">
+        <div class="date" id="dateField">2023年10月2日</div>
+        
+        <h2 id="recipientField">美美焦：</h2>
+        
+        <div id="letterContent" contenteditable="true">
+            <p>这是我写给你的信...</p >
+            <p>诶呀前几天刚吵完架，不过我们又和好了。现在的你恐怕已经忘了吧，我不久前给你说如果你还记得的话几年后我会给你一个惊喜，但我现在还不能给你说因为时候未到。
+哈哈哈，其实也没什么，那天我真正的想清楚了，觉得对象跟朋友就是不一样的，我不能强求你用对另一半的好来对我。我想清楚了，我是真心祝福你找到了对你好的人，所以我已经迫不及待把秘密告诉你了。这几天总在抖音上刷一些婚礼送闺蜜什么礼物。我搜了好多收藏了好多，想着不能让你的婚礼输给其他人，我给你的新婚礼物一定好过其他人，在这上面我必须有好胜心😁😁😁.然后想到了定时发送邮件的这个东西，我想你结婚的时候发送到你手上，但我也不知道你啥时候结婚，反正就瞎定了一个日期，这个时候我们已经上大学了，时间浪漫吧嘿嘿。没准这封邮件还能调和到时候我们之间发生的一些小矛盾，感觉挺好的。
+       真的感谢你教会我沟通，我感觉我们一辈子不会分开了。哎但也还是好担心，担心会有人对你更好更好然后显得我对你不好。我会努力改变，让我们的相处越来越好，虽然还是改变的有些慢，但我愿意为了你去改变，之前都在上学沟通时间不多，上了大学就好多了，我们就更自由了。我无法想象离开你会怎样。今天和一个朋友吵架了，他要跟我绝交，我跟他聊了很多，最后还是绝交了。我问他为什么我在解决问题而你却不愿意听我说的话呢？他说他不想解决问题。此刻我才知道不是所有人都愿意跟另一个人解决问题。大部分关系早就被问题解决了。很感谢生命中有你，因为你的可爱美丽让我不由自主的想去接近你，不想让你生气。你也知道我的脾气啊，有点倔，但我咋那么乐意跟你说对不起呢🤔说太多肉麻的话我自己也打哆嗦了。不管怎么样我都会想着你念着你，在路边看到喜欢的小饰品都想买一个给你嘿嘿。必须买两份你一个我一个😁😁😁感觉我们两个时时刻刻都在一起。
+       我感觉我结婚会晚于你，那我肯定是你的伴娘，送你啥我还不能告诉你嘿嘿嘿，你慢慢猜吧。这还是个秘密🤫我感觉我现在就得准备了，你结婚的时候感动死你😋😋😋
+        我们在一起这么久了，感觉跟谁在一起都没有和你一起的那种感觉。我觉得我有点强迫症，我想让我们这么好的关系变得更好。在学校的时候我一想到你就干劲十足啊，我真心希望有个男人能对你一辈子好不伤害你一点点。我还想着咱们毕业一起出去旅游呢，妈呀想想就激动。如果有一天我也交了男朋友，我门四个一起出去玩那我一定是粘着你的，你得跟我一个房间。我不知道上了大学我们会不会在一个城市，如果我们离得近就太好了我周六周日就找你玩去。你也要来找我啊。如果有一天我疲惫的回到宿舍发现你在我床上等着诶呦我去，我得幸福死了。想想就开心，诶我去忘了你对象儿了，你肯定会分一些时间给他，没事啊没事啊，到时候肯定是他来找你。
+        一想到还有高考就有点紧张，但我反正相信你一定会考好。我也希望我能考好，不受别人的影响。加油啊加油一定要加油啊，每次看你写的小纸条都很想笑啊，是那么真诚又可爱，你的字还跟小学生一样，看得出来写的很认真，工工整整板板正正，我会好好收藏。我感觉我们的感情太深了，我们的羁绊太深了。
+       只记得第一次绝交是在初中那时过了几个月你就又来找我了，说想和好，当时我就想，以后如果吵架了我也要主动找你一次，虽然当时绝交的时候你删我删得那么决绝，但后来你还来加我我真的是想不到。感谢那次你的开口成就了现在的我们。我再也不想体会当时的感受了，前几天吵架了我就很害怕呀，害怕你又要跟我绝交。想想就害怕，当你看到这封信的时候，你能不能真的不要在生我的气了，我有时真的不是有心的，我生气了有点控制不住自己的嘴，真的。我也想改，我发现了唯一不在生气的时候蹦出来几句**的话方法，那就是不说话。我只要不说话就不会口不择言了，所以我有的时候会憋着。诶呀希望你不要觉得我不想说话呀。这真的是我最大的缺点，需要我用很多精力去改变，我希望我们都不要说放弃对方的话。只要还能在一起，我希望我们在解决问题的时候都冷冷静静的，我太容易上脸了😭😭😭上脸不是一个好事，高一还因为火气大在检讨中说了班主任的诸多问题，后来还被当众批评。诶呀，可能跟你一生气一解决问题就爱哭一样，我一生气就爱上脸。
+        我真的很希望我们能一直好好在一起，我真的没有计较过我们相处时的是非对错，以至于你在让我陈述时我什么也想不起来。我们要互相包容，互相理解，我感觉这一份友谊非常珍贵，那个词叫啥来着哦对 叫无价之宝。我想象着有一天我开着汽车你坐副驾驶，然后放着music，我们一起去郊游，这也太美好了吧😭😭😭我一直都在朝着这个方向努力着。我一定要努力挣钱✌️✌️✌️哪怕我不找对象儿我也不能亏待你，我的钱就该你花，你一句想找人倾诉我就立马飞去找你。这也太美好了吧，虽然现在我还没钱，但我就是想给你买一些小礼物，希望你不会介意啊。
+真的忍不住，在学校看到糖葫芦就想买给你吃嘿嘿嘿。真的我现在花着父母的钱确实不好意思给你买昂贵的礼物，你结婚能不能晚一点，等我挣点钱再结婚，我给你个超级豪华的礼物，震惊全场嘿嘿。希望我有那个本事吧，有你在我就有干劲✊
+       说太多有点累，当你看到这封信之后，有啥感想换你来说给我听吧。打字真的好累啊，好困啊，俺要睡觉了，还要补补觉，开了学可千万不能打盹啊。我等不到5年或10年之后给你看这封信，我感觉这应该也算一个惊喜，也许一年之后我就忘记了这封邮件的存在，当你收到这封邮件后，对于我来说也是一个惊喜。
+</p >
+        </div>
+        
+        <div class="signature" id="signatureField">苗苗冯</div>
+    </div>
+
+    <div class="music-control">
+        <button onclick="toggleMusic()">🎵 暂停音乐</button>
+        <select id="songSelector" onchange="changeSong()">
+            <option value="music.mp3">默认音乐1</option>
+            <option value="song2.mp3">默认音乐2</option>
+        </select>
+    </div>
+
+    <audio id="bgMusic" autoplay loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // 音乐控制
+        const music = document.getElementById('bgMusic');
+        let isPlaying = true;
+        
+        function toggleMusic() {
+            if (isPlaying) {
+                music.pause();
+                document.querySelector('.music-control button').textContent = "▶️ 播放音乐";
+            } else {
+                music.play();
+                document.querySelector('.music-control button').textContent = "🎵 暂停音乐";
+            }
+            isPlaying = !isPlaying;
+        }
+        
+        function changeSong() {
+            const selector = document.getElementById('songSelector');
+            music.src = selector.value;
+            music.play();
+            isPlaying = true;
+            document.querySelector('.music-control button').textContent = "🎵 暂停音乐";
+        }
+        
+        // 从URL参数获取内容
+        function loadContentFromURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            if(urlParams.has('recipient')) {
+                document.getElementById('recipientField').textContent = 
+                    decodeURIComponent(urlParams.get('recipient')) + "：";
+            }
+            
+            if(urlParams.has('date')) {
+                document.getElementById('dateField').textContent = 
+                    decodeURIComponent(urlParams.get('date'));
+            }
+            
+            if(urlParams.has('content')) {
+                document.getElementById('letterContent').innerHTML = 
+                    decodeURIComponent(urlParams.get('content')).replace(/\n/g, '<br>');
+            }
+            
+            if(urlParams.has('signature')) {
+                document.getElementById('signatureField').textContent = 
+                    decodeURIComponent(urlParams.get('signature'));
+            }
+            
+            if(urlParams.has('song')) {
+                music.src = decodeURIComponent(urlParams.get('song'));
+                music.play();
+            }
+        }
+        
+        // 页面加载时执行
+        window.onload = function() {
+            loadContentFromURL();
+            
+            // 如果是编辑模式（URL中有edit参数），启用所有可编辑区域
+            const urlParams = new URLSearchParams(window.location.search);
+            if(urlParams.has('edit')) {
+                document.getElementById('recipientField').contentEditable = true;
+                document.getElementById('dateField').contentEditable = true;
+                document.getElementById('signatureField').contentEditable = true;
+            } else {
+                document.getElementById('letterContent').contentEditable = false;
+            }
+        };
+    </script>
+</body>
+</html>
